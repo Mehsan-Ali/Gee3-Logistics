@@ -5,12 +5,14 @@ import Features from '../components/Home/Features'
 import Banner from '../components/Home/Banner'
 import FAQ from '../components/Home/FAQ'
 import Blogs from '../components/Home/Blogs'
+import OurStory from '../components/About/OurStory'
 
 const AboutUsPage = () => {
   return (
     <>
         <AboutHero />
         <AboutUs/>
+        <OurStory />
         <Features />
         <Banner />
         <FAQ />
