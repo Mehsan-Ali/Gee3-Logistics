@@ -2,20 +2,20 @@ import { Check } from 'lucide-react';
 import ImageOne from '../../assets/industrial-port-container-yard.jpg';
 const OurStory = () => {
     return (
-        <main className="bg-white py-16 px-6 lg:px-10">
+        <main className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-10">
             <section className="mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                     {/* Left Content */}
                     <div className="space-y-6">
-                        <h4 className="text-orange-500 font-medium text-sm tracking-wider">
+                        <h4 className="text-orange-500 font-medium text-xs sm:text-sm tracking-wider">
                             //- Our Story
                         </h4>
 
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                        <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
                             The evolution of our logistics expertise and passion.
                         </h1>
 
-                        <div className="space-y-4 text-gray-600">
+                        <div className="space-y-4 text-gray-600 text-sm md:text-base">
                             <p>
                                 Them ipsum dolor sit amet consectetur. Nibh enim ullamcorper eu nullam est
                                 maecenas ulctetur. Nibh enim ullamcorper ermy.
@@ -27,7 +27,7 @@ const OurStory = () => {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 sm:pt-4">
                             <div className="flex items-center gap-3">
                                 <div className="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center shrink-0">
                                     <Check className="w-4 h-4 text-white" strokeWidth={3} />

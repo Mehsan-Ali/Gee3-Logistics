@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import React, { useState } from 'react'
 import FaqImage from '../../assets/FaqImage.png'
+import { NavLink } from "react-router-dom";
 const faqData = [
     {
         id: 1,
@@ -39,35 +40,35 @@ const FAQ = () => {
         setActiveFaq((prevId) => (prevId === id ? null : id)); // Toggle the active FAQ
     };
     return (
-        <main className="px-10 pb-10 ">
+        <main className="px-4 sm:px-6 md:px-10 pb-10">
             {/* ------- Heading Section ------- */}
-            <section className='text-center mt-20 mb-10 max-w-2xl mx-auto'>
-                <h2 className='text-4xl font-bold'>Why our logistics solutions are your best choice.</h2>
+            <section className='text-center mt-10 md:mt-20 mb-6 md:mb-10 max-w-2xl mx-auto'>
+                <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold'>Why our logistics solutions are your best choice.</h2>
             </section>
-            <div className="flex gap-10">
-                <section className="flex-1">
-                    <img src={FaqImage} alt="" />
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
+                <section className="flex-1 hidden md:block">
+                    <img src={FaqImage} alt="FAQ" className="w-full h-auto" />
                 </section>
-                <section className="flex flex-2 flex-col gap-5">
+                <section className="flex flex-1 flex-col gap-5">
                     {faqData.map((item) => (
                         <div
                             key={item.id}
-                            className={`flex gap-x-5 p-5 justify-between border border-[#e2812a] pb-6 items-start cursor-pointer max-w-2xl w-full md:max-w-4xl mx-auto ${activeFaq === item.id
+                            className={`flex gap-x-4 sm:gap-x-5 p-3 sm:p-5 justify-between border border-[#e2812a] pb-4 sm:pb-6 items-start cursor-pointer w-full ${activeFaq === item.id
                                 ? "bg-[#e2812a] transition-all duration-1000"
                                 : "bg-gray-100 text-black transition-all duration-1000"
                                 }`}
                             onClick={() => toggleShow(item.id)}
                         >
-                            <span className="order-1">
+                            <span className="order-1 shrink-0">
                                 {activeFaq === item.id ? (
-                                    <ChevronUp size={22} />
+                                    <ChevronUp size={18} className="sm:w-6 sm:h-6" />
                                 ) : (
-                                    <ChevronDown size={22} />
+                                    <ChevronDown size={18} className="sm:w-6 sm:h-6" />
                                 )}
                             </span>
-                            <div className="">
+                            <div className="flex-1">
                                 <p
-                                    className={`font-semibold uppercase text-sm sm:text-base ${activeFaq === item.id
+                                    className={`font-semibold uppercase text-xs sm:text-sm md:text-base ${activeFaq === item.id
                                         ? "text-black "
                                         : "text-black"
                                         }`}
@@ -87,14 +88,16 @@ const FAQ = () => {
                                     }}
                                     className="overflow-hidden"
                                 >
-                                    <p className="pt-2 text-black">{item.answer}</p>
+                                    <p className="pt-2 text-black text-xs sm:text-sm">{item.answer}</p>
                                 </motion.div>
                             </div>
                         </div>
                     ))}
-                    <button className="bg-[#e2812a] w-fit mr-auto px-8 py-2 text-white">
-                        View All
-                    </button>
+                    <NavLink to={'/faq'}>
+                        <button className="bg-[#e2812a] cursor-pointer w-fit mr-auto px-6 sm:px-8 py-2 text-white text-sm sm:text-base">
+                            View All
+                        </button>
+                    </NavLink>
                 </section>
             </div>
         </main>

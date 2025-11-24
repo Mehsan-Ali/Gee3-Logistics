@@ -64,32 +64,32 @@ const ContactForm = () => {
 
     return (
         <div>
-            <section className="w-full bg-gray-100 py-20 md:py-28 relative">
+            <section className="w-full bg-gray-100 py-12 sm:py-20 md:py-28 relative">
 
-                <div className="px-4 md:px-10">
-                    <div className="flex md:flex-nowrap flex-wrap justify-between gap-12 items-start">
+                <div className="px-4 sm:px-6 md:px-10 lg:px-12">
+                    <div className="flex flex-col lg:flex-row justify-between gap-6 md:gap-12 items-start">
                         {/* Left Column - Form */}
 
-                        <div className="space-y-8 flex-1">
+                        <div className="space-y-8 flex-1 w-full">
                             <div className="space-y-6">
                                 <div>
-                                    <h4 className='text-3xl font-bold'>Get in Touch</h4>
-                                    <p>Have questions about our services? Wed love to hear from
+                                    <h4 className='text-2xl md:text-3xl font-bold'>Get in Touch</h4>
+                                    <p className="text-sm md:text-base">Have questions about our services? Wed love to hear from
                                         you. Reach out anytime.</p>
                                 </div>
-                                <h4 className='text-3xl font-bold'>Contact Information</h4>
+                                <h4 className='text-2xl md:text-3xl font-bold'>Contact Information</h4>
                                 {/* <div className='w-full bg-gray-200 h-[0.1px]'></div> */}
                                 <div>
-                                    <h3 className="text-xl font-bold mb-2">Business Hours</h3>
-                                    <div className="space-y-2">
-                                        <div className="flex justify-between items-center">
+                                    <h3 className="text-lg md:text-xl font-bold mb-2">Business Hours</h3>
+                                    <div className="space-y-2 text-sm md:text-base">
+                                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0">
                                             <div className="flex items-center">
                                                 <Clock className="h-4 w-4 text-[#181818] mr-2" />
                                                 <span>Monday - Saturday</span>
                                             </div>
                                             <span>9:00 AM - 6:00 PM</span>
                                         </div>
-                                        <div className="flex justify-between items-center">
+                                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0">
                                             <div className="flex items-center">
                                                 <Clock className="h-4 w-4 text-[#181818] mr-2" />
                                                 <span>Sunday</span>
@@ -99,23 +99,23 @@ const ContactForm = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold mb-2">Response Time</h3>
+                                    <h3 className="text-lg md:text-xl font-bold mb-2">Response Time</h3>
 
-                                    <p className="text-[#0A0A0A] mb-4 max-w-md">
-                                        Typically within 2 hours during business hours
+                                    <p className="text-[#0A0A0A] mb-4 max-w-md text-sm md:text-base">
+                                        Typically within 2 hours during business hours<br />
                                         Emergency support available 24/7
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Right Column - Map and Info */}
-                        <div className='flex-2 bg-white p-8'>
-                            <form className="space-y-6" onSubmit={handleSubmit} ref={form}>
+                        {/* Right Column - Form */}
+                        <div className='flex-1 w-full bg-white p-6 md:p-8'>
+                            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit} ref={form}>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                                     <div className="flex flex-col space-y-2">
-                                        <label htmlFor="firstName" className="text-sm font-medium">
+                                        <label htmlFor="firstName" className="text-xs md:text-sm font-medium">
                                             First Name
                                         </label>
                                         <input
@@ -124,12 +124,12 @@ const ContactForm = () => {
                                             id="firstName"
                                             name='firstName'
                                             placeholder="Enter your first name"
-                                            className="border w-full p-2 rounded-lg border-[#181818]/20 focus:border-[#181818]"
+                                            className="border w-full px-3 py-2 rounded-lg text-sm border-[#181818]/20 focus:border-[#181818] focus:outline-none"
                                         />
                                     </div>
 
                                     <div className="flex flex-col space-y-2">
-                                        <label htmlFor="lastName" className="text-sm font-medium">
+                                        <label htmlFor="lastName" className="text-xs md:text-sm font-medium">
                                             Last Name
                                         </label>
                                         <input
@@ -138,7 +138,7 @@ const ContactForm = () => {
                                             id="lastName"
                                             name='lastName'
                                             placeholder="Enter your last name"
-                                            className="border w-full p-2 rounded-lg border-[#181818]/20 focus:border-[#181818]"
+                                            className="border w-full px-3 py-2 rounded-lg text-sm border-[#181818]/20 focus:border-[#181818] focus:outline-none"
                                         />
                                     </div>
                                 </div>
@@ -219,7 +219,7 @@ const ContactForm = () => {
 
                                 <button
                                     type="submit"
-                                    className="w-fit gap-1 mx-auto px-8 shadow-lg shadow-[#181818]/20 transition-all flex justify-center items-center p-2 hover:shadow-xl hover:shadow-[#181818]/30 cursor-pointer bg-gray-800 font-semibold text-white"
+                                    className="w-full sm:w-fit gap-1 px-6 md:px-8 shadow-lg shadow-[#181818]/20 transition-all flex justify-center items-center py-2 hover:shadow-xl hover:shadow-[#181818]/30 cursor-pointer bg-gray-800 font-semibold text-white text-sm md:text-base"
                                 >
                                     Send Message
                                 </button>

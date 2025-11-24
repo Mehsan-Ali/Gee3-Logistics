@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import Logo from '../assets/Logo.png';
+import { NavLink } from 'react-router-dom';
 
+const pagesData = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Service', href: '/services' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact Us', href: '/contact-us' },
+]
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -11,36 +19,27 @@ const Navbar = () => {
                 <div className="hidden lg:flex items-center justify-between">
                     {/* Left Navigation */}
                     <div className="flex items-center gap-6 xl:gap-8">
-                        <a
-                            href="#"
-                            className="px-4 xl:px-6 py-2 bg-[#e2812a] text-white font-medium hover:bg-orange-600 transition-colors text-sm xl:text-base"
-                        >
-                            Home
-                        </a>
-                        <a
-                            href="#about"
-                            className="text-gray-700 font-medium hover:text-orange-500 transition-colors text-sm xl:text-base"
-                        >
-                            About
-                        </a>
-                        <a
-                            href="#service"
-                            className="text-gray-700 font-medium hover:text-orange-500 transition-colors text-sm xl:text-base"
-                        >
-                            Service
-                        </a>
-                        <a
-                            href="#blog"
-                            className="text-gray-700 font-medium hover:text-orange-500 transition-colors text-sm xl:text-base"
-                        >
-                            Blog
-                        </a>
-                        <a
-                            href="#contact"
-                            className="text-gray-700 font-medium hover:text-orange-500 transition-colors text-sm xl:text-base"
-                        >
-                            Contact Us
-                        </a>
+                        {
+                            pagesData.map((page) => (
+                                page.name === 'Blog' ? (
+                                    <NavLink
+                                        key={page.name}
+                                        to={page.href}
+                                        className="text-gray-700 font-medium hover:text-orange-500 transition-colors text-sm xl:text-base"
+                                    >
+                                        {page.name}
+                                    </NavLink>
+                                ) : (
+                                    <a
+                                        key={page.name}
+                                        href={page.href}
+                                        className="text-gray-700 font-medium hover:text-orange-500 transition-colors text-sm xl:text-base"
+                                    >
+                                        {page.name}
+                                    </a>
+                                )
+                            ))
+                        }
                     </div>
 
                     {/* Center Logo */}
