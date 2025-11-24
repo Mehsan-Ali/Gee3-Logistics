@@ -28,7 +28,7 @@ const services = [
 ]
 const Services = () => {
     return (
-        <section className='py-10 px-4 sm:px-6 md:px-10 lg:px-20'>
+        <section className='py-0 sm:py-10 px-4 sm:px-6 md:px-10 lg:px-20'>
             {/* ------- Heading Section ------- */}
             <div className='text-center mt-10 md:mt-20 mb-6 md:mb-10 max-w-2xl mx-auto px-2'>
                 <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold'>Dedicated to delivering excellence in global logistics services </h2>
